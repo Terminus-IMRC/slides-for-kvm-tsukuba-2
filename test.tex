@@ -252,7 +252,7 @@ L=\frac{1}{n}\sum_{i=1}^{n^2}i
 \end{itemize}
 \end{frame}
 
-\begin{frame}\frametitle{研究方法(計算環境)}
+\begin{frame}\frametitle{計算環境}
 \begin{itemize}
 \item 筑波大学学際共同利用プログラムにより、筑波大学のスーパーコンピュータであるT2K-Tsukubaを利用
 \item 32ノード上で512スレッドを実行
@@ -260,25 +260,25 @@ L=\frac{1}{n}\sum_{i=1}^{n^2}i
 \end{itemize}
 \end{frame}
 
-\begin{frame}\frametitle{研究方法(アルゴリズムの改良)}
+\begin{frame}\frametitle{アルゴリズムの改良}
 \begin{itemize}
 \item 鏡像性、途中解から一意に求まる解、等の性質から、できるだけ計算量を絞る
 \item 部分的に解けているパターンからその先の全解探索を行うよう、探索空間を木構造化
 \end{itemize}
 \end{frame}
 
-\begin{frame}\frametitle{研究方法(アルゴリズムの改良)}
-\begin{itemize}
-\item 部分解からの探索の計算量は事前に求められないため、動的タスクスケジューリングが必要
-\item 部分解パターンの表現データが小さいのに対し、探索空間は大きいため、master-worker型並列処理が有効
-\end{itemize}
-\end{frame}
-
-\begin{frame}\frametitle{研究方法(アルゴリズムの改良)}
+\begin{frame}\frametitle{アルゴリズムの改良}
 \begin{figure}[htb]
 \centering
 \includegraphics[height=0.6\textheight]{order.eps}
 \end{figure}
+\end{frame}
+
+\begin{frame}\frametitle{アルゴリズムの改良}
+\begin{itemize}
+\item 部分解からの探索の計算量は事前に求められないため、動的タスクスケジューリングが必要
+\item 部分解パターンの表現データが小さいのに対し、探索空間は大きいため、master-worker型並列処理が有効
+\end{itemize}
 \end{frame}
 
 \begin{frame}\frametitle{master-worker型並列}
@@ -294,14 +294,14 @@ L=\frac{1}{n}\sum_{i=1}^{n^2}i
 \end{figure}
 \end{frame}
 
-\begin{frame}\frametitle{研究方法(並列化時のポイント)}
+\begin{frame}\frametitle{並列化時のポイント}
 \begin{itemize}
 \item 部分解を「25マス中$D$個まで埋まった状態」とし、このパターンをworkerに分配
 \item $D$が大きいとその先の探索空間が小さく、$D$が小さいとその逆
 \end{itemize}
 \end{frame}
 
-\begin{frame}\frametitle{研究方法(並列化時のポイント)}
+\begin{frame}\frametitle{並列化時のポイント}
 \begin{itemize}
 \item worker数が大きいとmasterの分配処理が大きくなり、小さいとmasterはidleになりやすい
 \end{itemize}
@@ -311,7 +311,7 @@ L=\frac{1}{n}\sum_{i=1}^{n^2}i
 \begin{frame}\frametitle{今回の並列処理のイメージ}
 \begin{figure}[htb]
 \centering
-\includegraphics[width=1.1\textwidth]{master-worker-proc.eps}
+\includegraphics[width=0.9\textwidth]{master-worker-proc.eps}
 \end{figure}
 \end{frame}
 
@@ -321,21 +321,21 @@ L=\frac{1}{n}\sum_{i=1}^{n^2}i
 \begin{frame}\frametitle{各$D$における全体処理時間}
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\textwidth]{alltim.eps}
+\includegraphics[width=0.8\textwidth]{alltim.eps}
 \end{figure}
 \end{frame}
 
 \begin{frame}\frametitle{各workerの処理時間}
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\textwidth]{sumefl.eps}
+\includegraphics[width=0.8\textwidth]{sumefl.eps}
 \end{figure}
 \end{frame}
 
 \begin{frame}\frametitle{各workerの通信時間}
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\textwidth]{sumwcr.eps}
+\includegraphics[width=0.8\textwidth]{sumwcr.eps}
 \end{figure}
 \end{frame}
 

@@ -22,7 +22,6 @@
 \begin{itemize}
 \item 杉崎 行優
 \item 並木中等教育学校 5年次
-\item 筑波大学のスパコンCOMA利用者
 \item Makefileガチ勢
 \item Twitter: @n\_IMRC
 \item Yo: IMRC
@@ -116,12 +115,12 @@
 \centering
 \large
 \vspace*{\fill}
-私が筑波大学のスーパーコンピュータを学際共同利用で利用した話
-(n次魔方陣のプログラムを書き、並列化した話 と XeonPhiに触って感じたこと)
+私が筑波大学のスーパーコンピュータを学際共同利用で利用した話 \\
+(「$n$次魔方陣のプログラムを書き、並列化した話」と「XeonPhiを触って感じたこと」)
 \vspace*{\fill}
 \end{frame}
 
-\begin{frame}\frametitle{並列計算とは}
+\begin{frame}\frametitle{並列計算}
 \begin{itemize}
 \item 複数のCPUやスレッドで分散して処理
 \item 実行時間の短縮が目的
@@ -130,6 +129,13 @@
 \item 通信やアルゴリズムのオーバーヘッドにより、現実的に不可能
 \end{itemize}
 \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{並列計算の概念図}
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{master-worker.eps}
+\end{figure}
 \end{frame}
 
 \begin{frame}\frametitle{並列計算のための環境}
@@ -183,7 +189,7 @@
 \begin{frame}\frametitle{学際共同利用とは}
 \begin{itemize}
 \item 筑波大学学際共同利用
-\item 年1度の申請に通れば1年間無料でスパコンを利用できる
+\item 申請に通れば1年間無料でスパコンを利用できる
 \begin{itemize}
 \item (最低でも)5TBのディスクスペース
 \item 申請資格: {\tiny 研究員, 大学または高専の学生, 研究機関に所属する者,} \textbf{その他センター長が認めた者}
@@ -193,8 +199,8 @@
 
 \begin{frame}\frametitle{学際共同利用での私の成果}
 \begin{itemize}
-\item 平成24年度: n次魔方陣全解数え上げプログラムの並列化と性能解析
-\item 平成25年度: n次魔方陣全解数え上げプログラムのメニーコア化
+\item 平成24年度: $n$次魔方陣全解数え上げプログラムの並列化と性能解析
+\item 平成25年度: $n$次魔方陣全解数え上げプログラムのメニーコア化
 \end{itemize}
 \end{frame}
 
@@ -202,12 +208,12 @@
 \centering
 \large
 \vspace*{\fill}
-n次魔方陣全解数え上げプログラムの並列化と性能解析
+$n$次魔方陣全解数え上げプログラムの並列化と性能解析
 \vspace*{\fill}
 \end{frame}
 
 \begin{frame}\frametitle{目的}
-一般的な整数問題である「n次魔方陣」の全解探索を超並列処理によって行う試み
+一般的な整数問題である「$n$次魔方陣」の全解探索を超並列処理によって行う試み
 \end{frame}
 
 \begin{frame}\frametitle{n次魔方陣}
@@ -265,7 +271,7 @@ L=\frac{1}{n}\sum_{i=1}^{n^2}i
 \begin{frame}\frametitle{master-worker型並列}
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\textwidth]{master-worker.eps}
+\includegraphics[width=\textwidth]{master-worker-proc.eps}
 \end{figure}
 \end{frame}
 
@@ -276,13 +282,6 @@ L=\frac{1}{n}\sum_{i=1}^{n^2}i
 \item worker数が大きいとmasterの分配処理が大きくなり、小さいとmasterはidleになりやすい
 \end{itemize}
 これらを踏まえ、worker数とDの関係の最適値を経験的に調査
-\end{frame}
-
-\begin{frame}\frametitle{master-worker型並列の概念図}
-\begin{figure}[htb]
-\centering
-\includegraphics[width=\textwidth]{master-worker-proc.eps}
-\end{figure}
 \end{frame}
 
 \begin{frame}\frametitle{実験結果(各Dにおける全体処理時間)}
@@ -311,7 +310,6 @@ L=\frac{1}{n}\sum_{i=1}^{n^2}i
 \item D=3では各workerの処理時間にバラつきが見られた
 \item D=8では各workerの通信時間が比較的長い
 \item D=6のバランスが良く、全体処理時間が最短になったのではないか
-\item 君子
 \end{itemize}
 \end{frame}
 

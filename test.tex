@@ -395,6 +395,19 @@ $n$次魔方陣全解 \\
 \end{itemize}
 \end{frame}
 
+\begin{frame}\frametitle{私の個人的な意見}
+\begin{itemize}
+\item XeonPhiのベクトル演算性能は、単精度においてはGPUに劣り、倍精度においてはGPUに勝る
+\item (c.f. \url{http://blog.xcelerit.com/intel-xeon-phi-vs-nvidia-tesla-gpu/})
+\item (c.f. \url{http://www.hpc.co.jp/benchmark20130201.html})
+\end{itemize}
+\end{frame}
 
+\begin{frame}\frametitle{私の個人的な意見}
+\begin{itemize}
+\item 世の中のアプリケーションが全て倍精度のベクトル演算であるわけではない
+\item XeonPhiの1コア当たりの性能はXeonに劣るため、ベクトル演算以外の処理は性能低下を招く
+\end{itemize}
+\end{frame}
 
 \end{document}

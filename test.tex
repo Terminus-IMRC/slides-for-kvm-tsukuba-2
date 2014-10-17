@@ -26,7 +26,7 @@
 \item Twitter: @n\_IMRC
 \item Yo: IMRC
 \item Github: Terminus-IMRC
-\item その他: http://imrc.noip.me/
+\item その他: \url{http://imrc.noip.me/}
 \end{itemize}
 \end{frame}
 
@@ -381,7 +381,10 @@ $n$次魔方陣全解 \\
 
 \begin{frame}\frametitle{Intelの主張}
 \Large
+\centering
+\vspace*{\fill}
 ※
+\vspace*{\fill}
 \end{frame}
 
 \begin{frame}\frametitle{Intelの主張}
@@ -397,10 +400,21 @@ $n$次魔方陣全解 \\
 
 \begin{frame}\frametitle{私の個人的な意見}
 \begin{itemize}
-\item XeonPhiのベクトル演算性能は、単精度においてはGPUに劣り、倍精度においてはGPUに勝る
-\item (c.f. \url{http://blog.xcelerit.com/intel-xeon-phi-vs-nvidia-tesla-gpu/})
-\item (c.f. \url{http://www.hpc.co.jp/benchmark20130201.html})
+\item 100スレッドオーダーでスケールするアプリケーションって滅多にないよね
+\begin{itemize}
+\item 単純なベクトル演算や並行計算等々
+\item (embarrassingly parallel)
 \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{私の個人的な意見}
+\begin{itemize}
+\item XeonPhiのベクトル演算性能は、単精度においてはGPUに劣り、倍精度においてはGPUに勝る
+\end{itemize}
+\small
+(c.f. \url{http://blog.xcelerit.com/intel-xeon-phi-vs-nvidia-tesla-gpu/})
+(c.f. \url{http://www.hpc.co.jp/benchmark20130201.html})
 \end{frame}
 
 \begin{frame}\frametitle{私の個人的な意見}

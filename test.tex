@@ -113,9 +113,8 @@
 \end{frame}
 \begin{frame}\frametitle{今日話す内容}
 \centering
-\large
 \vspace*{\fill}
-私が筑波大学のスーパーコンピュータを学際共同利用で利用した話 \\
+私が筑波大学のスーパーコンピュータを使用して出した成果 \\
 (「$n$次魔方陣のプログラムを書き、並列化した話」と「XeonPhiを触って感じたこと」)
 \vspace*{\fill}
 \end{frame}
@@ -208,7 +207,9 @@
 \centering
 \large
 \vspace*{\fill}
-$n$次魔方陣全解数え上げプログラムの並列化と性能解析
+$n$次魔方陣全解 \\
+数え上げプログラムの \\
+並列化と性能解析
 \vspace*{\fill}
 \end{frame}
 
@@ -220,11 +221,12 @@ $n$次魔方陣全解数え上げプログラムの並列化と性能解析
 \begin{itemize}
 \item 縦$n$、横$n$、計$n^2$マス
 \item $1$から$n^2$がユニークに入る
-\item 縦・横・斜めの列それぞれの合計がすべて等しい \\
+\item 縦・横・斜めの列それぞれの合計がすべて等しい
+\end{itemize}
+\centering
 \begin{displaymath}
 L=\frac{1}{n}\sum_{i=1}^{n^2}i
 \end{displaymath}
-\end{itemize}
 \end{frame}
 
 \begin{frame}\frametitle{$n$次魔方陣}
@@ -236,11 +238,16 @@ L=\frac{1}{n}\sum_{i=1}^{n^2}i
 
 \begin{frame}\frametitle{目的}
 \begin{itemize}
-\item nの増大に伴い、階乗的に増加する探索空間を数学的に絞り込む
+\item $n$の増大に伴い、階乗的に増加する探索空間を数学的に絞り込む
 \item 動的負荷分散処理をMPIによりプログラムし効率的処理を行う
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{目的}
+\begin{itemize}
 \item 当初目的は、未だに解が求まっていないn=6の求解であったが、計算リソース上困難
 \begin{itemize}
-\item 目標をn=5(解が求まっている)に対して正しく 動作するプログラムと、その動的負荷分散機能の検証及び評価に修正
+\item 目標を$n=5$(解が求まっている)に対して正しく動作するプログラムと、その動的負荷分散機能の検証及び評価に修正
 \end{itemize}
 \end{itemize}
 \end{frame}

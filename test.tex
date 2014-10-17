@@ -264,9 +264,21 @@ L=\frac{1}{n}\sum_{i=1}^{n^2}i
 \begin{itemize}
 \item 鏡像性、途中解から一意に求まる解、等の性質から、できるだけ計算量を絞る
 \item 部分的に解けているパターンからその先の全解探索を行うよう、探索空間を木構造化
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{研究方法(アルゴリズムの改良)}
+\begin{itemize}
 \item 部分解からの探索の計算量は事前に求められないため、動的タスクスケジューリングが必要
 \item 部分解パターンの表現データが小さいのに対し、探索空間は大きいため、master-worker型並列処理が有効
 \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{研究方法(アルゴリズムの改良)}
+\begin{figure}[htb]
+\centering
+\includegraphics[height=0.6\textheight]{order.eps}
+\end{figure}
 \end{frame}
 
 \begin{frame}\frametitle{master-worker型並列}

@@ -208,11 +208,9 @@
 \begin{frame}\frametitle{学際共同利用での私の成果}
 \centering
 \large
-\vspace*{\fill}
 $n$次魔方陣全解 \\
 数え上げプログラムの \\
 並列化と性能解析
-\vspace*{\fill}
 \end{frame}
 
 \begin{frame}\frametitle{目的}
@@ -234,7 +232,7 @@ L=\frac{1}{n}\sum_{i=1}^{n^2}i
 \begin{frame}\frametitle{$n$次魔方陣}
 \begin{figure}[htb]
 \centering
-\includegraphics[height=0.6\textheight]{ms.eps}
+\includegraphics[height=0.7\textheight]{ms.eps}
 \end{figure}
 \end{frame}
 
@@ -247,7 +245,7 @@ L=\frac{1}{n}\sum_{i=1}^{n^2}i
 
 \begin{frame}\frametitle{目的}
 \begin{itemize}
-\item 当初目的は、未だに解が求まっていないn=6の求解であったが、計算リソース上困難
+\item 当初目的は、未だに解が求まっていない$n=6$の求解であったが、計算リソース上困難
 \begin{itemize}
 \item 目標を$n=5$(解が求まっている)に対して正しく動作するプログラムと、その動的負荷分散機能の検証及び評価に修正
 \end{itemize}
@@ -272,7 +270,7 @@ L=\frac{1}{n}\sum_{i=1}^{n^2}i
 \begin{frame}\frametitle{アルゴリズムの改良}
 \begin{figure}[htb]
 \centering
-\includegraphics[height=0.6\textheight]{order.eps}
+\includegraphics[height=0.7\textheight]{order.eps}
 \end{figure}
 \end{frame}
 
@@ -299,7 +297,7 @@ L=\frac{1}{n}\sum_{i=1}^{n^2}i
 \begin{frame}\frametitle{並列化時のポイント}
 \begin{itemize}
 \item 部分解を「25マス中$D$個まで埋まった状態」とし、このパターンをworkerに分配
-\item $D$が大きいとその先の探索空間が小さく、$D$が小さいとその逆
+\item $D$が大きいとその先の探索空間が小さく、\\ $D$が小さいとその逆
 \end{itemize}
 \end{frame}
 

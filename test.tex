@@ -216,18 +216,18 @@ $n$次魔方陣全解数え上げプログラムの並列化と性能解析
 一般的な整数問題である「$n$次魔方陣」の全解探索を超並列処理によって行う試み
 \end{frame}
 
-\begin{frame}\frametitle{n次魔方陣}
+\begin{frame}\frametitle{$n$次魔方陣}
 \begin{itemize}
 \item 縦$n$、横$n$、計$n^2$マス
 \item $1$から$n^2$がユニークに入る
-\item 縦・横・斜めの列それぞれの合計がすべて等しい
-\begin{equation}
+\item 縦・横・斜めの列それぞれの合計がすべて等しい \\
+\begin{displaymath}
 L=\frac{1}{n}\sum_{i=1}^{n^2}i
-\end{equation}
+\end{displaymath}
 \end{itemize}
 \end{frame}
 
-\begin{frame}\frametitle{n次魔方陣}
+\begin{frame}\frametitle{$n$次魔方陣}
 \begin{figure}[htb]
 \centering
 \includegraphics[height=0.6\textheight]{ms.eps}
@@ -271,7 +271,7 @@ L=\frac{1}{n}\sum_{i=1}^{n^2}i
 \begin{frame}\frametitle{master-worker型並列}
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\textwidth]{master-worker-proc.eps}
+\includegraphics[height=0.8\textheight]{real-master-worker.eps}
 \end{figure}
 \end{frame}
 

@@ -277,14 +277,19 @@ L=\frac{1}{n}\sum_{i=1}^{n^2}i
 
 \begin{frame}\frametitle{研究方法(並列化時のポイント)}
 \begin{itemize}
-\item 部分解を「25マス中D個まで埋まった状態」とし、このパターンをworkerに分配
-\item Dが大きいとその先の探索空間が小さく、Dが小さいとその逆
-\item worker数が大きいとmasterの分配処理が大きくなり、小さいとmasterはidleになりやすい
+\item 部分解を「25マス中$D$個まで埋まった状態」とし、このパターンをworkerに分配
+\item $D$が大きいとその先の探索空間が小さく、$D$が小さいとその逆
 \end{itemize}
-これらを踏まえ、worker数とDの関係の最適値を経験的に調査
 \end{frame}
 
-\begin{frame}\frametitle{実験結果(各Dにおける全体処理時間)}
+\begin{frame}\frametitle{研究方法(並列化時のポイント)}
+\begin{itemize}
+\item worker数が大きいとmasterの分配処理が大きくなり、小さいとmasterはidleになりやすい
+\end{itemize}
+これらを踏まえ、worker数と$D$の関係の最適値を経験的に調査
+\end{frame}
+
+\begin{frame}\frametitle{実験結果(各$D$における全体処理時間)}
 \begin{figure}[htb]
 \centering
 \includegraphics[width=\textwidth]{alltim.eps}
@@ -307,9 +312,9 @@ L=\frac{1}{n}\sum_{i=1}^{n^2}i
 
 \begin{frame}\frametitle{結果・考察}
 \begin{itemize}
-\item D=3では各workerの処理時間にバラつきが見られた
-\item D=8では各workerの通信時間が比較的長い
-\item D=6のバランスが良く、全体処理時間が最短になったのではないか
+\item $D=3$では各workerの処理時間にバラつきが見られた
+\item $D=8$では各workerの通信時間が比較的長い
+\item $D=6$のバランスが良く、全体処理時間が最短になったのではないか
 \end{itemize}
 \end{frame}
 

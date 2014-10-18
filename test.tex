@@ -383,7 +383,7 @@ $n$次魔方陣全解 \\
 \Large
 \centering
 \vspace*{\fill}
-※
+\textbf{※}
 \vspace*{\fill}
 \end{frame}
 
@@ -421,6 +421,27 @@ $n$次魔方陣全解 \\
 \begin{itemize}
 \item 世の中のアプリケーションが全て倍精度のベクトル演算であるわけではない
 \item XeonPhiの1コア当たりの性能はXeonに劣るため、ベクトル演算以外の処理は性能低下を招く
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{謝罪}
+\begin{itemize}
+\item 「$n$次魔方陣全解問題」は整数問題で、かつベクトル演算を含まない
+\item $\longrightarrow$XeonPhiに不適だと初めから分かっていた
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{実験結果}
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.9\textwidth]{result.eps}
+\end{figure}
+\end{frame}
+
+\begin{frame}\frametitle{考察}
+\begin{itemize}
+\item 整数問題においては、pthreadではなくOpenMPを使用した方がプログラミングコストも低く、XeonPhiの性能が出る
+\item XeonPhiは整数問題には向いていないかも
 \end{itemize}
 \end{frame}
 
